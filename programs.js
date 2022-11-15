@@ -48,3 +48,30 @@ for (i = 0; i < arr1.length; i++) {
 
 
 console.log(leaders1);
+
+//Given an array A[ ] of positive integers of size N, where each value represents the number of chocolates in a packet.
+//Each packet can have a variable number of chocolates. There are M students, the task is to distribute chocolate packets among M students such that :
+//1.Each student gets exactly one packet.
+//2.The difference between maximum number of chocolates given to a student and minimum number of chocolates given to a student is minimum.
+const chocolate = [3, 4, 1, 9, 56, 7, 9, 12];
+document.getElementById("element3").innerHTML = chocolate;
+let numberofPackets = 8;
+let numberofchildrens = 5;
+ function findMinDiff(arr,n,m){
+    arr.sort((a,b) => a-b);
+    let min = arr[m-1] - arr[0];
+    let i = 1;
+    let begin = 0; let end = m-1;
+    while(i <= (n-m)){
+        if((arr[m-1+i] - arr[i]) < min){
+            min = arr[m-1+i] - arr[i];
+        }
+        i++;
+    }
+    return min;
+}
+
+console.log(findMinDiff(chocolate,numberofPackets,numberofchildrens));
+
+const result1 = findMinDiff(chocolate,numberofPackets,numberofchildrens);
+document.getElementById("element4").innerHTML = result1;
