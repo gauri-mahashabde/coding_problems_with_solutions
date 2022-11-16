@@ -75,3 +75,27 @@ console.log(findMinDiff(chocolate,numberofPackets,numberofchildrens));
 
 const result1 = findMinDiff(chocolate,numberofPackets,numberofchildrens);
 document.getElementById("element4").innerHTML = result1;
+
+//problem statement 3
+
+//solution 1
+
+const arr2 = [5, 3, 6, 8, 4, 9]
+document.getElementById("element5").innerHTML = arr2;
+const t = 10;
+
+var twoSum = function (nums, target) {
+    for (let i = 0; i < nums.length - 1; i++) {
+        for (let j = i + 1; j < nums.length; j++) {
+            let sum = nums[i] + nums[j]
+            if (sum == target) {
+                return [i, j]
+            }
+        }
+    }
+};
+
+const res = twoSum(arr2, t);
+console.log(res);
+
+document.getElementById("element6").innerHTML = res;
