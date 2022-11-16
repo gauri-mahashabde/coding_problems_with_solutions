@@ -57,23 +57,23 @@ const chocolate = [3, 4, 1, 9, 56, 7, 9, 12];
 document.getElementById("element3").innerHTML = chocolate;
 let numberofPackets = 8;
 let numberofchildrens = 5;
- function findMinDiff(arr,n,m){
-    arr.sort((a,b) => a-b);
-    let min = arr[m-1] - arr[0];
+function findMinDiff(arr, n, m) {
+    arr.sort((a, b) => a - b);
+    let min = arr[m - 1] - arr[0];
     let i = 1;
-    let begin = 0; let end = m-1;
-    while(i <= (n-m)){
-        if((arr[m-1+i] - arr[i]) < min){
-            min = arr[m-1+i] - arr[i];
+    let begin = 0; let end = m - 1;
+    while (i <= (n - m)) {
+        if ((arr[m - 1 + i] - arr[i]) < min) {
+            min = arr[m - 1 + i] - arr[i];
         }
         i++;
     }
     return min;
 }
 
-console.log(findMinDiff(chocolate,numberofPackets,numberofchildrens));
+console.log(findMinDiff(chocolate, numberofPackets, numberofchildrens));
 
-const result1 = findMinDiff(chocolate,numberofPackets,numberofchildrens);
+const result1 = findMinDiff(chocolate, numberofPackets, numberofchildrens);
 document.getElementById("element4").innerHTML = result1;
 
 //problem statement 3
@@ -106,22 +106,49 @@ const arr3 = [1, 4, 3, 5, 8, 9];
 const tg = 7;
 
 var twoSum = function (nums, target) {
-let i = 0; let j = nums.length -1;
-        let originalNums = [...nums];
-        nums.sort((a,b) => a-b)
-        while( i < j ) {
-            let sum = nums[i] + nums[j]; 
-            if(sum == target) { 
-                if(nums[i] == nums[j]){
-                    return [originalNums.indexOf(nums[i]),originalNums.indexOf(nums[j], i+1)]
-                }
-                return [originalNums .indexOf(nums[i]),originalNums.indexOf(nums[j])];
-                }
-            if(sum > target) j--;
-            if(sum < target) i++;
+    let i = 0; let j = nums.length - 1;
+    let originalNums = [...nums];
+    nums.sort((a, b) => a - b)
+    while (i < j) {
+        let sum = nums[i] + nums[j];
+        if (sum == target) {
+            if (nums[i] == nums[j]) {
+                return [originalNums.indexOf(nums[i]), originalNums.indexOf(nums[j], i + 1)]
+            }
+            return [originalNums.indexOf(nums[i]), originalNums.indexOf(nums[j])];
         }
-        return [0,1];
-
+        if (sum > target) j--;
+        if (sum < target) i++;
     }
+    return [0, 1];
 
-    console.log(twoSum(arr3,tg));
+}
+
+console.log(twoSum(arr3, tg));
+
+//problem statement 3
+
+
+let arr4 = [2, 3, 4, 5];
+document.getElementById("element7").innerHTML = arr4;
+var productExceptSelf = function (nums) {
+    let result = [];
+    for (let i = 0; i < nums.length; i++) {
+        let product = 1;
+        for (let j = 0; j < nums.length; j++) {
+            if (i != j) {
+                product = product * nums[j];
+
+            }
+
+        }
+        result.push(product);
+    }
+    return result;
+}
+
+const Productresult = productExceptSelf(arr4)
+document.getElementById("element8").innerHTML = Productresult;
+
+console.log(productExceptSelf(arr4));
+
