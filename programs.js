@@ -152,3 +152,45 @@ document.getElementById("element8").innerHTML = Productresult;
 
 console.log(productExceptSelf(arr4));
 
+//Problem statement 4
+
+const nums1 = [1, 3]
+const nums2 = [2]
+
+var findMedianSortedArrays = function (nums1, nums2) {
+    let len1 = nums1.length;
+    let len2 = nums2.length;
+    let mergedArr = [];
+    let i = 0;
+    let j = 0;
+    while (i < len1 && j < len2) {
+        if (nums1[i] <= nums2[j]) {
+            mergedArr.push(nums1[i]);
+            i++;
+        } else if (nums1[i] > nums2[j]) {
+            mergedArr.push(nums2[j]);
+            j++;
+        }
+    }
+    if (i < len1) {
+        for (let k = i; k < len1; k++) {
+            mergedArr.push(nums1[k]);
+        }
+    }
+    if (j < len2) {
+        for (let l = j; l < len2; l++) {
+            mergedArr.push(nums2[l]);
+        }
+    }
+    let len3 = mergedArr.length;
+    if (len3 % 2 == 0) {
+
+        return ((mergedArr[Math.floor(len3 / 2)] + mergedArr[Math.floor(len3 / 2) - 1]) / 2).toFixed(5);
+    }
+    else {
+        return mergedArr[Math.floor(len3 / 2)].toFixed(5);
+    }
+};
+
+console.log(findMedianSortedArrays(nums1, nums2));
+
