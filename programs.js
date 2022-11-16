@@ -99,3 +99,29 @@ const res = twoSum(arr2, t);
 console.log(res);
 
 document.getElementById("element6").innerHTML = res;
+
+//solution 2 
+
+const arr3 = [1, 4, 3, 5, 8, 9];
+const tg = 7;
+
+var twoSum = function (nums, target) {
+let i = 0; let j = nums.length -1;
+        let originalNums = [...nums];
+        nums.sort((a,b) => a-b)
+        while( i < j ) {
+            let sum = nums[i] + nums[j]; 
+            if(sum == target) { 
+                if(nums[i] == nums[j]){
+                    return [originalNums.indexOf(nums[i]),originalNums.indexOf(nums[j], i+1)]
+                }
+                return [originalNums .indexOf(nums[i]),originalNums.indexOf(nums[j])];
+                }
+            if(sum > target) j--;
+            if(sum < target) i++;
+        }
+        return [0,1];
+
+    }
+
+    console.log(twoSum(arr3,tg));
