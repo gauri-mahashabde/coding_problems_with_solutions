@@ -63,3 +63,19 @@ var maxPower = function(s) {
     // Space Complexity: O(n)
 };
 
+//solution 4
+
+var maxPower = function(s) {
+    let count = 1;
+    let max = 0;
+    for(let i =0; i< s.length; i++){
+       if(s[i] == s[i-1])
+           count++;
+        else
+            count = 1;
+        
+        max = Math.max(max, count);
+
+    } 
+    return max;
+};
