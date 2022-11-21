@@ -46,4 +46,20 @@ var maxPower = function(s) {
     return accum;
 };
 
+//solution 3
+
+var maxPower = function(s) {
+    let max = 0, char = s[0], freq = 1;
+    for (let i = 1; i < s.length; i++) {
+        if (s[i] === char) freq++;
+        else {
+            max = Math.max(max, freq);
+            freq = 1;
+            char = s[i];
+        }
+    }
+    return Math.max(max, freq)
+    // Time Complexity: O(n)
+    // Space Complexity: O(n)
+};
 
