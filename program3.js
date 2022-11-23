@@ -79,3 +79,21 @@ var maxPower = function(s) {
     } 
     return max;
 };
+
+
+//Problem statement 9
+
+
+ let nums = [1,2,3,2];
+ document.getElementById("element3").innerHTML = nums;
+
+var sumOfUnique = function(nums) {
+    let map = new Map();
+        nums.forEach(item => map.set(item, (map.get(item) + 1) || 1))
+        let res = 0;
+        map.forEach((value, key) => {if(value == 1) res += key;});
+        return res;
+    };
+
+    let result1 = sumOfUnique(nums);
+    document.getElementById("element4").innerHTML = result1;
