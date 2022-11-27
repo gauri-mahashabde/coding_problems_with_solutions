@@ -96,4 +96,18 @@ var sumOfUnique = function(nums) {
     };
 
     let result1 = sumOfUnique(nums);
-    document.getElementById("element4").innerHTML = result1;
+    document.getElementById("element5").innerHTML = result1;
+
+    //problem statement 10
+
+  let  s = "is2 sentence4 This1 a3";
+  document.getElementById("element5").innerHTML = s;
+  
+  const sortSentence = (s) => {
+    return s.split(' ').reduce((arr, s) => { arr[s[s.length - 1] - 1] = s.slice(0, s.length - 1); return arr; }, []).join(' ');
+};
+
+let result2 = sortSentence(s);
+document.getElementById("element6").innerHTML = result2
+
+  
