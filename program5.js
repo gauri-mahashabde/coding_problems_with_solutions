@@ -1,3 +1,5 @@
+
+//Problem statement 14
 const arr = [1,3,5,6];
 const target = 5;
 document.getElementById("element1").innerHTML = arr;
@@ -13,3 +15,25 @@ const searchInsert = (nums, target, left = 0, right = nums.length - 1) => {
 const result = searchInsert(arr,target);
 console.log(result);
 document.getElementById("element2").innerHTML = result;
+
+//Problem statement15
+const  nums = [1,2,3,4,5,6,7];
+const k = 3;
+
+document.getElementById("element3").innerHTML = nums;
+const rotate = function (nums, k) {
+    k = k % nums.length;
+    const lastK = nums.slice(nums.length - k);
+    for (let i = nums.length - k - 1; i >= 0; i--) {
+        nums[i + k] = nums[i];
+    }
+    for (let i = 0; i < k; i++) {
+        nums[i] = lastK[i];
+    }
+    return nums;
+};
+
+const result2 = rotate(nums,k);
+
+document.getElementById("element4").innerHTML = result2;
+console.log(result2);
