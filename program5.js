@@ -37,3 +37,42 @@ const result2 = rotate(nums,k);
 
 document.getElementById("element4").innerHTML = result2;
 console.log(result2);
+
+//solution 2 for problem statement 15
+
+const reverse = (array, start, end) => {
+    // check for inputs
+    if (!array || !array.length || start >= end) return;
+
+    // perform reversing
+    while (start < end) {
+        let temp = array[start];
+        array[start] = array[end];
+        array[end] = temp;
+        start++;
+        end--;
+    }
+    return array;
+}
+
+const rotate5 = function (nums, k) {
+
+    if (!nums || !nums.length) return;
+
+    if (nums.length == 1) return nums;
+
+    if (k > nums.length) k = k % nums.length;
+
+    if (k > 0) {
+        // first reverse the entire array
+        reverse(nums, 0, nums.length - 1);
+        // next reverse the k elements
+        reverse(nums, 0, k - 1);
+        // finally, reverse the elements after our k elements. 
+        reverse(nums, k, nums.length - 1);
+    }
+    return nums;
+};
+
+rotate5(nums,k);
+console.log(nums);
