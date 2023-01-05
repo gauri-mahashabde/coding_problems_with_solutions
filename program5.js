@@ -76,3 +76,28 @@ const rotate5 = function (nums, k) {
 
 rotate5(nums,k);
 console.log(nums);
+
+//Problem statement15
+ const num = [-2,1,-3,4,-1,2,1,-5,4];
+ document.getElementById("element5").innerHTML = num;
+
+ //solution
+
+ const maxSubArray = (nums) => {
+    let maxTotal = nums[0],
+        sum = 0;
+    for(let i of nums) {
+        sum += i;
+        if(maxTotal < sum) {
+            maxTotal = sum;
+        }
+        if(sum < 0) {
+            sum = 0;
+        }
+    }
+    return maxTotal;
+};
+
+const result1 = maxSubArray(num);
+
+document.getElementById("element6").innerHTML = result1;
